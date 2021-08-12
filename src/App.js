@@ -1,6 +1,8 @@
 import React from 'react';
 import Counter from '../Counter';
 import './style.css';
+import { Button } from 'reactstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default class App extends React.Component {
   // getCount = count => {
@@ -18,18 +20,38 @@ export default class App extends React.Component {
   setDefaultValue = () => {
     this.inputRef.current.value = 'Hi';
   };
+
   render() {
     return (
-      <div>
+      <div class="container">
         <div ref="test" />
-        <button onClick={this.increment}>Increment From App</button>
-        <button onClick={this.decrement}>Decrement From App</button>
-        <button onClick={this.reset}>Reset From App</button>
-        <button onClick={this.printRef}>Print</button>
+        <h1>Class Component Section </h1>
+        <Button color="primary" onClick={this.increment}>
+          Increment From App
+        </Button>
         <br /> <br />
-        <input ref={this.inputRef} />
-        <button onClick={this.setDefaultValue}>Set Default </button>
-        <Counter ref={this.countRef} name="guvi" getCount={this.getCount} />
+        <Button color="secondary" onClick={this.decrement}>
+          Decrement From App
+        </Button>
+        <br /> <br />
+        <Button color="danger" onClick={this.reset}>
+          Reset From App
+        </Button>
+        <br /> <br />
+        <Button color="success" onClick={this.printRef}>
+          Print
+        </Button>
+        <br /> <br />
+        <label>
+          <strong>Default Value : </strong>
+        </label>{' '}
+        &nbsp;
+        <input ref={this.inputRef} /> &nbsp;
+        <Button color="dark" onClick={this.setDefaultValue}>
+          Set Default{' '}
+        </Button>
+        <Counter ref={this.countRef} getCount={this.getCount} />
+        <hr />
       </div>
     );
   }

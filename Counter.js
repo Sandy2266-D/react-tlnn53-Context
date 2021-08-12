@@ -1,4 +1,7 @@
 import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Button } from 'reactstrap';
+
 export default class Counter extends React.Component {
   constructor(props) {
     super(props);
@@ -13,12 +16,22 @@ export default class Counter extends React.Component {
   render() {
     return (
       <div>
+        <hr />
         <h1>Counter Application</h1>
-        <p> counter={this.state.count}</p>
-        <button onClick={this.increment}>Increment</button>
-        <button onClick={this.decrement}>Decrement</button>
-        <button onClick={this.reset}>Reset</button>
-
+        <h4>Diplay Counter Value={this.state.count}</h4>
+        <Button color="primary" onClick={this.increment}>
+          Increment
+        </Button>
+        <br />
+        <br />
+        <Button color="secondary" onClick={this.decrement}>
+          Decrement
+        </Button>
+        <br />
+        <br />
+        <Button color="danger" onClick={this.reset}>
+          Reset
+        </Button>
         {/* parent Caomponent pass to child component through props */}
         {/* <button onClick={() => this.props.getCount(this.state.count)}>
           Send Count
