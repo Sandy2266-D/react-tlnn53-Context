@@ -1,5 +1,6 @@
 import React from 'react';
 import Counter from './Counter';
+import { Button } from 'reactstrap';
 export default function Functional() {
   // getCount = count => {
   //   console.log(count);
@@ -17,16 +18,33 @@ export default function Functional() {
   };
   return (
     <div>
-      <button onClick={() => countRef.current.increment()}>
+      <h1>Functional Component </h1>
+      <Button color="primary" onClick={() => countRef.current.increment()}>
         Increment From App
-      </button>
-      <button onClick={decrement}>Decrement From App</button>
-      <button onClick={reset}>Reset From App</button>
-      <button onClick={printRef}>Print</button>
+      </Button>
       <br /> <br />
-      <input ref={inputRef} />
-      <button onClick={setDefaultValue}>Set Default </button>
+      <Button color="secondary" onClick={decrement}>
+        Decrement From App
+      </Button>
+      <br /> <br />
+      <Button color="danger" onClick={reset}>
+        Reset From App
+      </Button>
+      <br /> <br />
+      <Button color="success" onClick={printRef}>
+        Print
+      </Button>
+      <br /> <br />
+      <label>
+        <strong>Default Value : </strong>
+      </label>{' '}
+      &nbsp;
+      <input ref={inputRef} /> &nbsp;
+      <Button color="dark" onClick={setDefaultValue}>
+        Set Default{' '}
+      </Button>
       <Counter ref={countRef} />
+      <hr />
     </div>
   );
 }

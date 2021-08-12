@@ -4,7 +4,8 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import Functional from '../Functional';
 
-// ReactDOM.render(<Functional />, document.getElementById('root')); - Functional Component
+// Functional Component
+ReactDOM.render(<Functional />, document.getElementById('root'));
 
 // Class Component
-ReactDOM.render(<App />, document.getElementById('root'));
+// ReactDOM.render(<App />, document.getElementById('root'));
